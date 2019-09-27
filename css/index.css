@@ -1,0 +1,105 @@
+html, body {
+  height: 100%;
+}
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  color: #333;
+  background-color: #fff;
+  line-height: 1;
+  margin: 0;
+}
+h2 {
+  font-weight: 700;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: rgb(75, 75, 83);
+  margin: 0;
+}
+.panel {
+  background-color: #fff;
+}
+.panel-header {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20rem;
+}
+.panel-main {
+  /* padding: 1rem; */
+}
+.inner-panel {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+.weather {
+  display: grid;
+  grid-template-areas: "title icon" "temp icon";
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 0.5em;
+}
+.sunlight {
+  background-color: #f7fafc;
+}
+.temp {
+  font-size: 3em;
+}
+.icon {
+  -webkit-filter: drop-shadow(0.125rem 0.125rem 0.125rem rgba(30,30,30,0.6));
+  filter:         drop-shadow(0.125rem 0.125rem 0.125rem rgba(30,30,30,0.6));
+  grid-area: icon;
+  position: relative;
+  overflow: hidden;
+}
+.icon img {
+  height: 5em;
+  width: auto;
+  position: absolute;
+  top: -0.5em;
+}
+.modal {
+  display: grid;
+  background-color: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.loading {
+  color: white;
+  place-self: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 1; 
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+
+@media screen and (min-width: 30rem) {
+  body {
+    background-color: rgb(201, 205, 211);
+    display: grid;
+    place-content: center;
+  }
+  .panel {
+    width: 30rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1.2rem 1.25rem -0.25rem rgba(0,0,0,.1), 0 0.6rem 0.6rem -0.25rem rgba(0,0,0,.04);
+  }
+}
